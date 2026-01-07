@@ -75,20 +75,20 @@ const initDatabase = async () => {
         // Create Default Employee User
         console.log('👩‍💼 Creating default employee user...');
         
-        const employeePassword = await bcrypt.hash('employee123', 10);
+        
         const employeePermissions = getPermissionsByRole('employee');
         
         const employeeUser = await User.create({
             username: 'employee',
             email: 'employee@edumanage.com',
-            password: employeePassword,
+            password: 'employee123',
             role: 'employee',
             profile: {
-                firstName: 'John',
-                lastName: 'Doe',
-                phone: '9876543211',
-                designation: 'Operation Manager',
-                department: 'Operations'
+                firstName: 'null',
+                lastName: 'null',
+                phone: 'null',
+                designation: 'null',
+                department: 'null'
             },
             permissions: employeePermissions,
             status: 'active',
@@ -109,18 +109,17 @@ const initDatabase = async () => {
         // Create Default Counselor
         console.log('👨‍🏫 Creating default counselor...');
         
-        const counselorPassword = await bcrypt.hash('counselor123', 10);
         const counselorPermissions = getPermissionsByRole('counselor');
         
         const counselorUser = await User.create({
             username: 'counselor',
             email: 'counselor@edumanage.com',
-            password: counselorPassword,
+            password: 'counselor123',
             role: 'counselor',
             profile: {
-                firstName: 'Sarah',
-                lastName: 'Smith',
-                phone: '9876543212',
+                firstName: 'null',
+                lastName: 'null',
+                phone: 'null',
                 designation: 'Admission Counselor',
                 department: 'Admissions'
             },
@@ -143,13 +142,13 @@ const initDatabase = async () => {
         // Create Default Trainer
         console.log('👩‍🏫 Creating default trainer...');
         
-        const trainerPassword = await bcrypt.hash('trainer123', 10);
+        
         const trainerPermissions = getPermissionsByRole('trainer');
         
         const trainerUser = await User.create({
             username: 'trainer',
             email: 'trainer@edumanage.com',
-            password: trainerPassword,
+            password: 'trainer123',
             role: 'trainer',
             profile: {
                 firstName: 'Michael',
